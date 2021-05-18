@@ -1,0 +1,11 @@
+1. UseState
+Get cleared when page is refreshed
+it's like a shot term memory
+it's component specific
+
+2. UseEffect
+runs first time whn app laods
+
+3. Whenever we use timestamp, do keep in mind to record not our system's time but firebase actual time;
+
+https://todo-a8de3.web.app/
