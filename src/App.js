@@ -20,7 +20,8 @@ function App() {
 
     //returns order by time
     db.collection('todos').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => doc.data().todo))
+      //passing object, or we can also just pass the text only.
+      setTodos(snapshot.docs.map(doc => ({ id: doc.id, todo: doc.data().todo, uploadtime: doc.data().timestamp})))
     })
 
   }, []);
@@ -54,7 +55,7 @@ function App() {
       
       <ul>
         {todos.map(todo =>(
-          <Todo text={todo} />
+          <Todo todo={todo} />
         ))}
       </ul>
     </div>
